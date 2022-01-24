@@ -25,6 +25,10 @@ int main() {
     exportFile << GPIONum;
     exportFile.close();
 
+    string question;
+    cout << "Press enter to continue ";
+    getline(cin, question);
+
     ofstream directionFile(GPIODirection);
     directionFile << "out";
     directionFile.close();
