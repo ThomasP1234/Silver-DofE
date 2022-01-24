@@ -46,6 +46,10 @@ int main() {
             valueFile.close();
         }
         else if (answer == 3){
+            ofstream valueFile(GPIOValue);
+            valueFile << "0";
+            valueFile.close();
+            
             ofstream unexportFile(GPIOUnexport);
             unexportFile << GPIONum;
             unexportFile.close();
