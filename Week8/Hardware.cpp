@@ -33,7 +33,7 @@ int main() {
     int answer;
     while (!valid){
         answer = 0;
-        cout << "[1] Turn LED on \n[2] Turn LED off \n[3] Quit";
+        cout << "[1] Turn LED on \n[2] Turn LED off \n[3] Quit \n";
         cin >> answer;
         if (answer == 1){
             ofstream valueFile(GPIOValue);
