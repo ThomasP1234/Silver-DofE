@@ -26,8 +26,8 @@ int main() {
     exportFile.close();
 
     string question;
-    cout << "Press enter to continue ";
-    getline(cin, question);
+    cout << "Enter a character to continue ";
+    cin >> question;
 
     ofstream directionFile(GPIODirection);
     directionFile << "out";
