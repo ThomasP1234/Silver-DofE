@@ -9,6 +9,7 @@
     width = 250>
 
 - I then wrote the code in C++ to turn the LED on and off here is it working:
+
     <img src = "Images/IMG_1.jpg"
     alt = "Image"
     width = 250>
