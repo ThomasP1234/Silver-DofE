@@ -1,5 +1,6 @@
 #include "raylib.h"
 #include <math.h>
+// Requires Raylib which can be found here: https://www.raylib.com/
 
 int main(void) {
     const int screenWidth = 800;
@@ -26,11 +27,8 @@ int main(void) {
     SetTargetFPS(60); // Set game to run at 60 frames-per-second
     
     int score = 0;
-
     int currentScreen = 0;
-
     Font defaultFont = GetFontDefault();
-
     bool end = false;
 
     while (!WindowShouldClose()) { // Detect window close button or ESC key
