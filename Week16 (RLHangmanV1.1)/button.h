@@ -8,8 +8,8 @@ class Button {
     private:
         float width = 10.0;
         float height = 10.0;
-        float x = 10.0; // Top Left Point
-        float y = 10.0; // Top Right Point
+        float x = 10.0; // Top Left x
+        float y = 10.0; // Top Left y
 
         int state = 0; // 0 = Normal, 1 = Mouse Hovered, 2 = Pressed
         bool btnActive = true; // false = button cannot be pressed, true = button can be pressed
@@ -39,7 +39,6 @@ class Button {
         Button(const Button &btn);
         Button(float setWidth, float setHeight, float setX, float setY);
 
-        // void registerCallback(void (*func)(Button *btn));
         void registerCallback(ButtonEventHandler *btnEventHandler);
 
         void geometry(float setWidth, float setHeight, float setX, float setY);

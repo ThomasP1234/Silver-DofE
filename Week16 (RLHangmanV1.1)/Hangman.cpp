@@ -13,10 +13,10 @@
 #include "HangmanButtonEventHandler.h"
 #include "Hangman.h"
 
-Hangman::Hangman() {
+Hangman::Hangman() { // Constructor
     btnEventHandler = new HangmanButtonEventHandler(this);
-    gameLogic();
-    window();
+    gameLogic(); // Game logic init
+    window(); // Window logic init
 }
 
 void Hangman::gameLogic() {
@@ -89,25 +89,25 @@ void Hangman::update() {
 
     std::for_each(answerUpper.begin(), answerUpper.end(), [this](char &d) {
         int ascii = d;
-        if (ascii >= 65 && ascii <= 90) {
+        if (ascii >= 65 && ascii <= 90) { // Create the string of dashes to represent unguessed letters and filters out non alpha characters
             if ((std::find(validLetters.begin(), validLetters.end(), d) != validLetters.end()) == true || end == true) {
-                puzzle += d;
+                puzzle += d; // Add the character if it is alpha and already guessed
             }
             else {
-                puzzle += "–";
+                puzzle += "–"; // Add a dash if unguessed
             }
         }
         else {
-            puzzle += d;
+            puzzle += d; // Add the character if it is not alpha
         }
     });
 
-    if (end == false) {
+    if (end == false) { // Check if guess is in puzzle
         std::size_t found = answerUpper.find(guess);
         if (found!=std::string::npos) {
             validLetters.push_back(guess[0]);
             validLettersStr += guess;
-            if ((unsigned int)solutionLetterCount == validLettersStr.size()) {
+            if ((unsigned int)solutionLetterCount == validLettersStr.size()) { // Check for win condition
                 std::list<Button *> btns = btnMgr.get();
                 for (Button *btn : btns) {
                     btn->color(WHITE, LIGHTGRAY, GRAY, GREEN);
@@ -116,12 +116,12 @@ void Hangman::update() {
                 }
             }
         }
-        else {
+        else { // Filter bad guesses
             invalidLetters.push_back(guess[0]);
             invalidLettersStr += guess;
         }
 
-        if (invalidLetters.size() >= (unsigned int)lives) {
+        if (invalidLetters.size() >= (unsigned int)lives) { // Check loose condition
             std::list<Button *> btns = btnMgr.get();
             for (Button *btn : btns) {
                 btn->color(WHITE, LIGHTGRAY, GRAY, RED);

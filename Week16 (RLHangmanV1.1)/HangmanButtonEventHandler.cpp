@@ -8,8 +8,7 @@ HangmanButtonEventHandler::HangmanButtonEventHandler(Hangman *hm) {
     hangman = hm;
 }
 
-void HangmanButtonEventHandler::invoke(Button *btn) {
-    // ButtonEventHandler::invoke(btn);
+void HangmanButtonEventHandler::invoke(Button *btn) { // Code to perform on button press
     btn->active(false);
     hangman->setGuess(btn->getText());
 }

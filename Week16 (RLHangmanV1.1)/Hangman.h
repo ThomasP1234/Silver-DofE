@@ -44,7 +44,6 @@ class Hangman {
         ~Hangman();
         void gameLogic();
         void window();
-        //void btn_cb(Button *btn);
 
         void gameLoop();
         void draw();
